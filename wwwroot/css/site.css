@@ -115,3 +115,39 @@ body {
             font-size: 18px;
         }
 }
+
+.columnOrders {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#columnUnwanted {
+    float: left;
+    width: 220px;
+    height: 100%;
+}
+
+.columnSent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#columnUnwanted {
+    float: left;
+    width: 220px;
+    height: 100%;
+}
+
+.columnContact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#columnUnwanted {
+    float: left;
+    width: 220px;
+    height: 100%;
+}

@@ -18,5 +18,22 @@ namespace propeller_torken.Controllers
             return View();
         }
 
+        public IActionResult AdminOrders()
+        {
+            return View();
+        }
+
+        public IActionResult AdminSent()
+        {
+            return View();
+        }
+
+
+        public IActionResult AdminContact()
+        {
+            return View();
+        }
     }
+
+
 }

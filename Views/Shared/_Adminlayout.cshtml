@@ -15,10 +15,10 @@
     </div>
     <!-- The sidebar -->
     <div class="sidebar">
-        <a href="#Home"><i class="fa fa-fw fa-2x fa-home"></i> Home</a>
-        <a href="#Orders"><i class="fa fa-fw fa-2x fa-shopping-cart"></i> Orders</a>
-        <a href="#Sent"><i class="fa fa-fw fa-2x fa-check-square"></i> Sent</a>
-        <a href="#contact"><i class="fa fa-fw fa-2x fa-envelope"></i> Contact</a>
+        <a href="~/Admin/Adminpage"><i class="fa fa-fw fa-2x fa-home"></i> Home</a>
+        <a href="~/Admin/AdminOrders"><i class="fa fa-fw fa-2x fa-shopping-cart"></i> Orders</a>
+        <a href="~/Admin/AdminSent"><i class="fa fa-fw fa-2x fa-check-square"></i> Sent</a>
+        <a href="~/Admin/AdminContact"><i class="fa fa-fw fa-2x fa-envelope"></i> Contact</a>
         <a href="#contact"><i class="fa fa-cog fa-spin fa-2x fa-fw"></i> Coggers</a>
         <a href="/"><i class="fa fa-reply fa-2x" aria-hidden="true"></i> Return</a>
     </div>
@@ -39,8 +39,12 @@
     </ul>-->
 
 
-    <div>
-        @RenderBody()
+    <div class="container" style="padding-left: 200px">
+        <div class="row">
+            <div class="col">
+                @RenderBody()
+        </div>
+    </div>
     </div>
 </body>
 </html>
