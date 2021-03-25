@@ -78,6 +78,7 @@ body {
     font-size:80px;
     text-align:center;
     
+    
 }
 
 @keyframes slidein {
@@ -151,12 +152,13 @@ body {
 }
 
 #employeePhoto {
-    animation-duration: 35s;
+    animation-duration: 30s;
     animation-name: slidein;
     margin-left:auto;
     margin-right:auto;
     display:block;
     position:center;
+    text-align:center;
 }
 
 @keyframes slideinagain {
@@ -172,7 +174,7 @@ body {
 }
 
 #homePageIntroFive {
-    animation-duration: 25s;
+    animation-duration:30s;
     animation-name: slidein;
     text-align: center;
 }
