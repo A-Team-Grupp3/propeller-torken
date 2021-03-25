@@ -5,4 +5,8 @@
     <RootNamespace>propeller_torken</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="propeller-torken.sln" />
+  </ItemGroup>
+
 </Project>
