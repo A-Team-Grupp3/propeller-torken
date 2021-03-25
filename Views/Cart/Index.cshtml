@@ -6,3 +6,155 @@
     Layout = "~/Views/Shared/_CartLayout.cshtml";
 
 }
+
+<div class="row">
+    <div class="col" id="Cartlist">
+
+    </div>
+
+    <div class="col" id="CustomerInfo">
+        <form method="post">
+            <div>
+                <label>Fullständigt namn:</label><br />
+                <input type="text" name="fullName" id="fullName" required />
+            </div>
+            <div>
+                <label>Gatuadress:</label><br />
+                <input type="text" name="street" id="street" required />
+            </div>
+            <div>
+                <label>Postnummer:</label><br />
+                <input type="text" name="zipCode" id="zipCode" required />
+            </div>
+            <div>
+                <label>Postort:</label><br />
+                <input type="text" name="city" id="city" required />
+            </div>
+            <div>
+                <label>Telefonnummer:</label><br />
+                <input type="text" name="phoneNumber" id="phoneNumber" required /><br />
+            </div>
+            <div>
+                <label>Email:</label><br />
+                <input type="text" name="email" id="email" required /><br />
+            </div>
+            <div class="popup" onclick="myFunction()">
+                <br />
+                <button type="submit" name="CustomerInfoSubmit" id="CustomerConfirmButton" value="Bekräfta">Bekräfta</button><br />
+                <span class="popuptext" id="myPopup">Din order har registrerats!</span>
+            </div>
+
+
+        </form>
+
+    </div>
+
+
+
+
+
+</div>
+<script>
+    function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    }
+
+    
+
+    //var button = document.getElementById("CustomerConfirmButton");
+    
+
+    //// Disable the button on initial page load
+    //button.disabled = true;
+
+    //var boolFullName = false;
+    //var boolStreet = false;
+    //var boolZipCode = false;
+    //var boolCity = false;
+    //var boolPhoneNumber = false;
+    //var boolEmail = false;
+
+    //const fullName = document.getElementById("fullName");
+
+    //fullName.addEventListener("input", function (event) {
+    //    if (fullName.validity.typeMismatch) {
+    //        fullName.setCustomValidity("Fyll i för- och efternamn!");
+    //    }
+    //    else {
+    //        fullName.setCustomValidity("");
+    //        boolFullName = true;
+    //    }
+    //});
+
+    //const street = document.getElementById("street");
+
+    //street.addEventListener("input", function (event) {
+    //    if (street.validity.typeMismatch) {
+    //        street.setCustomValidity("Fyll i din gatuadress!");
+    //    }
+    //    else {
+    //        street.setCustomValidity("");
+    //        boolStreet = true;
+    //    }
+    //});
+
+    //const zipCode = document.getElementById("zipCode");
+
+    //zipCode.addEventListener("input", function (event) {
+    //    if (zipCode.validity.typeMismatch) {
+    //        zipCode.setCustomValidity("Fyll i ditt postnummer!");
+    //    }
+    //    else {
+    //        zipCode.setCustomValidity("");
+    //        boolZipCode = true;
+    //    }
+    //});
+
+    //const city = document.getElementById("city");
+
+    //city.addEventListener("input", function (event) {
+    //    if (city.validity.typeMismatch) {
+    //        city.setCustomValidity("Fyll i din postort!");
+    //    }
+    //    else {
+    //        city.setCustomValidity("");
+    //        boolCity = true;
+    //    }
+    //});
+
+    //const phoneNumber = document.getElementById("phoneNumber");
+
+    //phoneNumber.addEventListener("input", function (event) {
+    //    if (phoneNumber.validity.typeMismatch) {
+    //        phoneNumber.setCustomValidity("Fyll i ditt telefonnummer!");
+    //    }
+    //    else {
+    //        phoneNumber.setCustomValidity("");
+    //        boolPhoneNumber = true;
+    //    }
+    //});
+
+    //const email = document.getElementById("email");
+
+    //email.addEventListener("input", function (event)
+    //{
+    //    if (email.validity.typeMismatch) {
+    //        email.setCustomValidity("Fyll i din email-adress!");
+    //    }
+    //    else {
+    //        email.setCustomValidity("");
+    //        boolEmail = true;
+    //    }
+    //});
+    
+
+    //if (boolFullName && boolStreet && boolZipCode && boolCity && boolPhoneNumber && boolEmail)
+    //{
+    //    button.disabled = false;
+       
+    //}
+
+</script>
+
+
