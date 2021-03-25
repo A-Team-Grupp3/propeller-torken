@@ -76,6 +76,7 @@ body {
     animation-duration: 3s;
     animation-name: slidein;
     font-size:80px;
+    text-align:center;
     
 }
 
@@ -92,12 +93,10 @@ body {
 }
 
 #homePageIntroTwo {
-    
-    animation-duration: 15s;
+    animation-duration: 10s;
     animation-name: slidein;
-    
-    
-    font-size:35px;
+    text-align: center;
+    font-size: 35px;
 }
 
 @keyframes slideinagain {
@@ -114,9 +113,10 @@ body {
 
 
 #homePageIntroThree {
-    animation-duration: 20s;
+    animation-duration: 15s;
     animation-name: slidein;
     font-size: 25px;
+    text-align: center;
 }
 
 @keyframes slideinagain {
@@ -132,9 +132,10 @@ body {
 }
 
 #homePageIntroFour {
-    animation-duration: 25s;
+    animation-duration: 20s;
     animation-name: slidein;
     font-size: 20px;
+    text-align: center;
 }
 
 @keyframes slideinagain {
@@ -150,9 +151,11 @@ body {
 }
 
 #employeePhoto {
-    animation-duration: 30s;
+    animation-duration: 35s;
     animation-name: slidein;
-    
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
 }
 
 @keyframes slideinagain {
@@ -168,8 +171,9 @@ body {
 }
 
 #homePageIntroFive {
-    animation-duration: 35s;
+    animation-duration: 25s;
     animation-name: slidein;
+    text-align: center;
 }
 
 @keyframes slideinagain {
