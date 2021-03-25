@@ -69,3 +69,117 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+
+#homePageIntroOne {
+    
+    animation-duration: 3s;
+    animation-name: slidein;
+    font-size:80px;
+    
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 200%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+#homePageIntroTwo {
+    
+    animation-duration: 15s;
+    animation-name: slidein;
+    
+    
+    font-size:35px;
+}
+
+@keyframes slideinagain {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+
+#homePageIntroThree {
+    animation-duration: 20s;
+    animation-name: slidein;
+    font-size: 25px;
+}
+
+@keyframes slideinagain {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+#homePageIntroFour {
+    animation-duration: 25s;
+    animation-name: slidein;
+    font-size: 20px;
+}
+
+@keyframes slideinagain {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+#employeePhoto {
+    animation-duration: 30s;
+    animation-name: slidein;
+    
+}
+
+@keyframes slideinagain {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+#homePageIntroFive {
+    animation-duration: 35s;
+    animation-name: slidein;
+}
+
+@keyframes slideinagain {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
