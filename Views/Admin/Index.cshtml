@@ -3,6 +3,8 @@
 *@
 @{
     ViewData["Title"] = "AdministratorLogIn";
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 }
 
@@ -12,16 +14,17 @@
     <form method="post">
         <div>
             <!--<label for="fname">Användarnamn:</label><br />-->
-            <span><i class="fa fa-user-circle-o fa-2x input-group-prepend" aria-hidden="true"></i></span>
+            <i class="fa fa-user icon" aria-hidden="true"></i>
             <input type="text" id="fname" name="fname" placeholder="Username" required /><br />
         </div>
         <div>
             <!--<label>Lösenord:</label><br -->
-            <i class="fa fa-key fa-2x"></i>
+            <i class="fa fa-key icon" aria-hidden="true"></i>
             <input type="password" id="pword" name="pword" placeholder="Password" required /><br />
         </div>
         <div>
-            <input type="submit" value="Logga in" />
+            <br />
+            <button type="submit" class="btn" id="loginbtn">Logga in</button>
         </div>
     </form>
 </div>

@@ -174,3 +174,25 @@ body {
         width: 100%;
     }
 }
+
+.icon{
+    padding:10px;
+    background:black;
+    color:white;
+    min-width:50px;
+    text-align:center;
+}
+
+#loginbtn {
+    
+    color:black;
+    background-color:hotpink;
+    padding: 15px 20px;
+    border:thin;
+    cursor:pointer;
+    opacity:0.9;
+    font-weight:bold;
+}
+#loginbtn:hover{
+    opacity:1;
+}
