@@ -72,10 +72,12 @@ body {
 }
 
 #logopic{
-    transition: transform .7s ease-in-out;
+    
+    transition: transform 1s ease-in-out;
 }
 #logopic:hover{
     cursor:default;
     transform:rotate(1080deg);
+    
     
 }
