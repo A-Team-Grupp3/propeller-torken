@@ -9,4 +9,9 @@
     <None Include="propeller-torken.sln" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Partials\" />
+    <Folder Include="Views\Products\" />
+  </ItemGroup>
+
 </Project>
