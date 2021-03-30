@@ -10,21 +10,26 @@
     }
 </style>     
 
-<div class="row">
-    <div id="productAlternative">
 
-        <div class="productItem">
 
-            <img src="~/images/propkeps_3.jpg" id="propellerbilden" width="200" height="200" />
-            <h4>@Html.ActionLink("Propellerkepsar", "PropellerKepsar", "Product")</h4>
-
-        </div>
-        <div class="productItem">
-
-                <img src="~/images/svartTorktumlare.png" id="torkbilden" width="200" height="200"/>
-                <h4>@Html.ActionLink("Torktumlare", "TorkTumlare", "Product")</h4>
-            
-        </div>
+    <div class="productkepsbox col-lg-4" id="kepsbox">
+        <form method="post">
+            <div class="propellerBoxPic" align="center">
+                <img src="~/images/propkeps_3.jpg" id="propellerbilden" width="200" height="200" />
+                <h4>@Html.ActionLink("Propellerkepsar", "PropellerKepsar", "Product")</h4>
+            </div>
+        </form>
     </div>
-</div>
+
+    <div class="producttorkbox col-lg-4" id="torkItem">
+        <form method="post">
+            <div class="torkBoxPic" align="center">
+                <img src="~/images/svartTorktumlare.png" id="torkbilden" width="200" height="200" />
+                <h4>@Html.ActionLink("Torktumlare", "TorkTumlare", "Product")</h4>
+            </div>
+        </form>
+    </div>
+
+    
+
 

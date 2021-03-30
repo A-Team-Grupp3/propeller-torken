@@ -619,7 +619,7 @@ input:focus {
 }
 
 #productAlternative {
-    
+  
 }
 
 .productItem {
@@ -631,7 +631,7 @@ input:focus {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    padding-left:120px;
+    padding-left:50px;
 }
 .contactBox {
     width: 370px;
@@ -658,6 +658,34 @@ input:focus {
     color: black;
 }
 .contactBoxPic {
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+.productkepsbox {
+    width: 250px;
+    height: 300px;
+    margin: 20px auto;
+    background: #FFFFFF;
+    box-shadow: 3px 4px 5px 1px rgba(0,0,0,0.10);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.producttorkbox {
+    width: 250px;
+    height: 300px;
+    margin: 20px auto;
+    background: #FFFFFF;
+    box-shadow: 3px 4px 5px 1px rgba(0,0,0,0.10);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.propellerBoxPic {
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+.torkBoxPic {
     padding-top: 15px;
     padding-bottom: 10px;
 }
