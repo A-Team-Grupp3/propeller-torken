@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div>
+        <h1 class="AdminHeader">AdminOverview</h1>
+    </div>
+    <!-- The sidebar -->
+    <div class="sidebar">
+        <a href="~/Admin/Adminpage"><i class="fa fa-fw fa-2x fa-home"></i> Home</a>
+        <a href="~/Admin/AdminOrders"><i class="fa fa-fw fa-2x fa-shopping-cart"></i> Orders</a>
+        <a href="~/Admin/AdminSent"><i class="fa fa-fw fa-2x fa-check-square"></i> Sent</a>
+        <a href="~/Admin/AdminContact"><i class="fa fa-fw fa-2x fa-envelope"></i> Contact</a>
+        <a href="#contact"><i class="fa fa-cog fa-spin fa-2x fa-fw"></i> Coggers</a>
+        <a href="/"><i class="fa fa-reply fa-2x" aria-hidden="true"></i> Return</a>
+    </div>
+
+    <!--<ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Start</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Ordrar</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Skickade</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+    </ul>-->
+
+
+    <div class="container" style="padding-left: 200px">
+        <div class="row">
+            <div class="col">
+                @RenderBody()
+        </div>
+    </div>
+    </div>
+</body>
+</html>

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "propeller-torken", "propeller-torken.csproj", "{643EDF9D-4E7C-4AE0-B3D9-191BCEDD1161}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropellerTorkenMain", "..\PropellerTorkenMain\PropellerTorkenMain.csproj", "{0BC3BA74-5AA7-4055-A9E8-04FE0C18A885}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropellerTorkenMain", "PropellerTorkenMain\PropellerTorkenMain.csproj", "{ECE4A84D-7C1E-441C-90CF-8CD8A58EFC17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{643EDF9D-4E7C-4AE0-B3D9-191BCEDD1161}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{643EDF9D-4E7C-4AE0-B3D9-191BCEDD1161}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{643EDF9D-4E7C-4AE0-B3D9-191BCEDD1161}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0BC3BA74-5AA7-4055-A9E8-04FE0C18A885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0BC3BA74-5AA7-4055-A9E8-04FE0C18A885}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0BC3BA74-5AA7-4055-A9E8-04FE0C18A885}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0BC3BA74-5AA7-4055-A9E8-04FE0C18A885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECE4A84D-7C1E-441C-90CF-8CD8A58EFC17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECE4A84D-7C1E-441C-90CF-8CD8A58EFC17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECE4A84D-7C1E-441C-90CF-8CD8A58EFC17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECE4A84D-7C1E-441C-90CF-8CD8A58EFC17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

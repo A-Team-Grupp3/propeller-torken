@@ -1,0 +1,362 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "CartPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<script>
+    function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    }
+    </script>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col" id="CartList">
+
+            <div class="shopping-cart">
+                <!-- Title -->
+                <div class="title">
+                    Shopping Bag
+                </div>
+
+                <!-- Propellerkeps Product #1 -->
+                <div class="item">
+                    <div class="buttons">
+                        <span class="delete-btn"></span>
+                    </div>
+
+                    <div class="image">
+                        <img src="~/images/circle-cropped (3).png" width="100" height="100" />
+                    </div>
+
+                    <div class="description">
+                        <span>Propellerkeps 1</span>
+                        <span>Begagnad</span>
+                        <span>Vit</span>
+                    </div>
+
+                    <div class="quantity">
+                        <button class="plus-btn" type="button" name="button">
+                            <img src="plus.svg" alt="" />
+                        </button>
+                        <input type="text" name="name" value="1">
+                        <button class="minus-btn" type="button" name="button">
+                            <img src="minus.svg" alt="" />
+                        </button>
+                    </div>
+
+                    <div class="total-price">100 SEK</div>
+                </div>
+
+                <br />
+
+                <!-- Propellerkeps Product #2 -->
+                <div class="item">
+                    <div class="buttons">
+                        <span class="delete-btn"></span>
+                    </div>
+
+                    <div class="image">
+                        <img src="~/images/carlcropped.png" width="100" height="100" />
+                    </div>
+
+                    <div class="description">
+                        <span>Propellerkeps 2</span>
+                        <span>Begagnad</span>
+                        <span>Vit</span>
+                    </div>
+
+                    <div class="quantity">
+                        <button class="plus-btn" type="button" name="button">
+                            <img src="plus.svg" alt="" />
+                        </button>
+                        <input type="text" name="name" value="1">
+                        <button class="minus-btn" type="button" name="button">
+                            <img src="minus.svg" alt="" />
+                        </button>
+                    </div>
+
+                    <div class="total-price">150 SEK</div>
+                </div>
+
+                <!-- Propellerkeps Product #3 -->
+                <div class="item">
+                    <div class="buttons">
+                        <span class="delete-btn"></span>
+                    </div>
+
+                    <div class="image">
+                        <img src="~/images/carlcropped.png" width="100" height="100" />
+                    </div>
+
+                    <div class="description">
+                        <span>Propellerkeps 3</span>
+                        <span>Begagnad</span>
+                        <span>Vit</span>
+                    </div>
+
+                    <div class="quantity">
+                        <button class="plus-btn" type="button" name="button">
+                            <img src="plus.svg" alt="" />
+                        </button>
+                        <input type="text" name="name" value="1">
+                        <button class="minus-btn" type="button" name="button">
+                            <img src="minus.svg" alt="" />
+                        </button>
+                    </div>
+
+                    <div class="total-price">200 SEK</div>
+                </div>
+
+                <!-- Torktumlare Product #4 -->
+                <div class="item">
+                    <div class="buttons">
+                        <span class="delete-btn"></span>
+                    </div>
+
+                    <div class="image">
+                        <img src="~/images/carlcropped.png" width="100" height="100" />
+                    </div>
+
+                    <div class="description">
+                        <span>Torktumlare 1</span>
+                        <span>Begagnad</span>
+                        <span>Vit</span>
+                    </div>
+
+                    <div class="quantity">
+                        <button class="plus-btn" type="button" name="button">
+                            <img src="plus.svg" alt="" />
+                        </button>
+                        <input type="text" name="name" value="1">
+                        <button class="minus-btn" type="button" name="button">
+                            <img src="minus.svg" alt="" />
+                        </button>
+                    </div>
+
+                    <div class="total-price">1000 SEK</div>
+                </div>
+
+                <!-- Torktumlare Product #5 -->
+                <div class="item">
+                    <div class="buttons">
+                        <span class="delete-btn"></span>
+                    </div>
+
+                    <div class="image">
+                        <img src="~/images/carlcropped.png" width="100" height="100" />
+                    </div>
+
+                    <div class="description">
+                        <span>Torktumlare 2</span>
+                        <span>Begagnad</span>
+                        <span>Vit</span>
+                    </div>
+
+                    <div class="quantity">
+                        <button class="plus-btn" type="button" name="button">
+                            <img src="plus.svg" alt="" />
+                        </button>
+                        <input type="text" name="name" value="1">
+                        <button class="minus-btn" type="button" name="button">
+                            <img src="minus.svg" alt="" />
+                        </button>
+                    </div>
+
+                    <div class="total-price">2000 SEK</div>
+                </div>
+
+                <!-- Torktumlare Product #6 -->
+                <div class="item">
+                    <div class="buttons">
+                        <span class="delete-btn"></span>
+                    </div>
+
+                    <div class="image">
+                        <img src="~/images/carlcropped.png" width="100" height="100" />
+                    </div>
+
+                    <div class="description">
+                        <span>Torktumlare 3</span>
+                        <span>Begagnad</span>
+                        <span>Vit</span>
+                    </div>
+
+                    <div class="quantity">
+                        <button class="plus-btn" type="button" name="button">
+                            <img src="plus.svg" alt="" />
+                        </button>
+                        <input type="text" name="name" value="1">
+                        <button class="minus-btn" type="button" name="button">
+                            <img src="minus.svg" alt="" />
+                        </button>
+                    </div>
+                    <div class="total-price">3000 SEK</div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="customerinfo-cart" id="CustomerInfo">
+            <form method="post">
+
+                <div class="title">
+                    Kunduppgifter
+                </div>
+
+                <div align="center">
+                    <label class="customerinfo-cart-label">Förnamn:</label><br />
+                    <input type="text" name="firstName" id="firstName" required placeholder="ditt förnamn..." />
+                </div>
+                <div align="center">
+                    <label class="customerinfo-cart-label">Efternamn:</label><br />
+                    <input type="text" name="lastName" id="lastName" required placeholder="ditt efternamn..." />
+                </div>
+                <div align="center">
+                    <label class="customerinfo-cart-label">Gatuadress:</label><br />
+                    <input type="text" name="street" id="street" required placeholder="din postadress..." />
+                </div>
+                <div align="center">
+                    <label class="customerinfo-cart-label">Postnummer:</label><br />
+                    <input type="text" name="zipCode" id="zipCode" required placeholder="ditt postnummer..." />
+                </div>
+                <div align="center">
+                    <label class="customerinfo-cart-label">Postort:</label><br />
+                    <input type="text" name="city" id="city" required placeholder="din postort ..." />
+                </div>
+                <div align="center">
+                    <label class="customerinfo-cart-label">Telefonnummer:</label><br />
+                    <input type="text" name="phoneNumber" id="phoneNumber" required placeholder="ditt telefonnummer..." />
+                </div>
+                <div align="center">
+                    <label class="customerinfo-cart-label">Email:</label><br />
+                    <input type="text" name="email" id="email" required placeholder="din email..." />
+                </div><br />
+                      <div class="popup d-flex justify-content-center ">
+
+                          <button type="submit" onsubmit="myFunction()" name="CustomerInfoSubmit" id="CustomerConfirmButton" value="Bekräfta">Bekräfta</button><br />
+                          <span class="popuptext" id="myPopup">Din order har registrerats!</span>
+
+                      </div>
+                
+
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    var button = document.getElementById("CustomerConfirmButton");
+
+
+    // Disable the button on initial page load
+    button.disabled = true;
+
+    var boolFirstName = false;
+    var boolLastName = false;
+    var boolStreet = false;
+    var boolZipCode = false;
+    var boolCity = false;
+    var boolPhoneNumber = false;
+    var boolEmail = false;
+
+    const firstName = document.getElementById("firstName");
+
+    firstName.addEventListener("change", function () {
+        if (firstName.validity.typeMismatch) {
+            firstName.setCustomValidity("Fyll i för- och efternamn!");
+        }
+        else {
+            firstName.setCustomValidity("");
+            boolFirstName = true;
+        }
+    });
+
+    const lastName = document.getElementById("lastName");
+
+    lastName.addEventListener("change", function () {
+        if (lastName.validity.typeMismatch) {
+            lastName.setCustomValidity("Fyll i för- och efternamn!");
+        }
+        else {
+            lastName.setCustomValidity("");
+            boolLastName = true;
+        }
+    });
+
+    const street = document.getElementById("street");
+
+    street.addEventListener("change", function () {
+        if (street.validity.typeMismatch) {
+            street.setCustomValidity("Fyll i din gatuadress!");
+        }
+        else {
+            street.setCustomValidity("");
+            boolStreet = true;
+        }
+    });
+
+    const zipCode = document.getElementById("zipCode");
+
+    zipCode.addEventListener("change", function () {
+        if (zipCode.validity.typeMismatch) {
+            zipCode.setCustomValidity("Fyll i ditt postnummer!");
+        }
+        else {
+            zipCode.setCustomValidity("");
+            boolZipCode = true;
+        }
+    });
+
+    const city = document.getElementById("city");
+
+    city.addEventListener("change", function () {
+        if (city.validity.typeMismatch) {
+            city.setCustomValidity("Fyll i din postort!");
+        }
+        else {
+            city.setCustomValidity("");
+            boolCity = true;
+        }
+    });
+
+    const phoneNumber = document.getElementById("phoneNumber");
+
+    phoneNumber.addEventListener("change", function () {
+        if (phoneNumber.validity.typeMismatch) {
+            phoneNumber.setCustomValidity("Fyll i ditt telefonnummer!");
+        }
+        else {
+            phoneNumber.setCustomValidity("");
+            boolPhoneNumber = true;
+        }
+    });
+
+    const email = document.getElementById("email");
+
+    email.addEventListener("change", function () {
+        if (email.validity.typeMismatch) {
+            email.setCustomValidity("Fyll i din email-adress!");
+        }
+        else {
+            email.setCustomValidity("");
+            boolEmail = true;
+            if (boolFirstName && boolLastName && boolStreet && boolZipCode && boolCity && boolPhoneNumber && boolEmail) {
+                button.disabled = false;
+
+            }
+        }
+    });
+</script>
+
+
+
+
+
+
