@@ -1,11 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using PropellerTorkenMain.Models.Database;
 using PropellerTorkenMain.Services;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PropellerTorkenMain.ApiControllers
 {
@@ -13,24 +9,16 @@ namespace PropellerTorkenMain.ApiControllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        CustomerService cService = new CustomerService();
+        private CustomerService cService = new CustomerService();
 
         public CustomerController()
         {
-
         }
 
-        [HttpGet]
-        public IEnumerable<Customer> Get(string name)
+        [HttpPost]
+        public string AddCustomer(string firstName, string lastName, string address, string city, string email, string phoneNr, int zipcode)
         {
-            if(string.IsNullOrWhiteSpace(name))
-            {
-                return cService.Get();
-            }
-            else
-            {
-                return cService.GetByName(name);
-            }
+            return cService.AddCustomer(firstName, lastName, address, city, email, phoneNr, zipcode);
         }
 
         [HttpDelete]
@@ -39,10 +27,17 @@ namespace PropellerTorkenMain.ApiControllers
             return cService.DeleteCustomer(id);
         }
 
-        [HttpPost]
-        public string AddCustomer(string firstName, string lastName, string address, string city, string email, string phoneNr, int zipcode)
+        [HttpGet]
+        public IEnumerable<Customer> Get(string name)
         {
-            return cService.AddCustomer(firstName, lastName, address, city, email, phoneNr, zipcode);
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                return cService.Get();
+            }
+            else
+            {
+                return cService.GetByName(name);
+            }
         }
     }
 }

@@ -1,11 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using PropellerTorkenMain.Models.Database;
 using PropellerTorkenMain.Services;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PropellerTorkenMain.ApiControllers
 {
@@ -13,11 +9,22 @@ namespace PropellerTorkenMain.ApiControllers
     [ApiController]
     public class OrderController : ControllerBase
     {
-        OrderService os = new OrderService();
+        private OrderService os = new OrderService();
 
         public OrderController()
         {
+        }
 
+        [HttpPost]
+        public string CreateOrder(int customerId, int orderSum)
+        {
+            return os.AddOrder(customerId, orderSum);
+        }
+
+        [HttpDelete]
+        public string Delete(int id)
+        {
+            return os.DeleteOrder(id);
         }
 
         [HttpGet]
@@ -31,18 +38,6 @@ namespace PropellerTorkenMain.ApiControllers
             {
                 return os.GetOrderById(id);
             }
-        }
-
-        [HttpDelete]
-        public string Delete(int id)
-        {
-            return os.DeleteOrder(id);
-        }
-
-        [HttpPost]
-        public string CreateOrder(int customerId, int orderSum)
-        {
-            return os.AddOrder(customerId, orderSum);
         }
     }
 }

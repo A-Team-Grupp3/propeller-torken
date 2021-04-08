@@ -12,12 +12,11 @@ namespace PropellerTorkenMain.Models.Database
             ProductsInOrders = new HashSet<ProductsInOrder>();
         }
 
-        public int Id { get; set; }
         public DateTime Date { get; set; }
+        public int Id { get; set; }
+        public string OrderStatus { get; set; }
         public int OrderSum { get; set; }
         public int OurCustomer { get; set; }
-        public string OrderStatus { get; set; }
-
         public virtual Customer OurCustomerNavigation { get; set; }
         public virtual ICollection<ProductsInOrder> ProductsInOrders { get; set; }
     }

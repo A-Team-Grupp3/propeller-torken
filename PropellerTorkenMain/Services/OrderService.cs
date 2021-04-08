@@ -1,51 +1,43 @@
-﻿
-using PropellerTorkenMain.Models;
-using PropellerTorkenMain.Models.Database;
+﻿using PropellerTorkenMain.Models.Database;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Threading.Tasks;
-
-
 
 namespace PropellerTorkenMain.Services
 {
     public class OrderService
     {
         public PropellerDataContext ctx = new PropellerDataContext();
-        public List<Order> CurrentOrderList { get; set; }
-        public List<Order> SentOrderList { get; set; }
-        public Order _order { get; set; }
-
-        
-
 
         public OrderService()
         {
             //CurrentOrderList = ctx.Orders.ToList();
         }
 
-        
+        public Order _order { get; set; }
+        public List<Order> CurrentOrderList { get; set; }
+        public List<Order> SentOrderList { get; set; }
 
-        public List<Order> GetOrders(string orderStatus = null)
+        public string AddOrder(int customerId, int orderSum)
         {
-            var orders = ctx.Orders.Include(o => o.OurCustomerNavigation).Where(o => o.OrderStatus == orderStatus);
+            ctx.Orders.Add(new Order
+            {
+                Date = DateTime.Now,
+                OurCustomer = customerId,
+                OrderSum = orderSum
+            });
 
-
-            return orders.ToList();
-            //return null;
+            ctx.SaveChanges();
+            return "Order successfully created";
         }
 
-
-        public void SetStatusToSent(int id)
+        public string DeleteOrder(int id)
         {
-            var sentItem = ctx.Orders.FirstOrDefault(x => x.Id == id);
-            sentItem.OrderStatus = "SENT";
+            var orderToRemove = ctx.Orders.Where(o => o.Id == id).Single<Order>();
+            ctx.Orders.Remove(orderToRemove);
             ctx.SaveChanges();
-
-
-
+            return "Order successfully removed";
         }
 
         public IEnumerable<Order> Get()
@@ -63,43 +55,18 @@ namespace PropellerTorkenMain.Services
             {
                 return ctx.Orders.Where(o => o.Id == id).ToList();
             }
-
         }
 
-        public string DeleteOrder(int id)
+        public List<Order> GetOrders(string orderStatus = null)
         {
-            var orderToRemove = ctx.Orders.Where(o => o.Id == id).Single<Order>();
-            ctx.Orders.Remove(orderToRemove);
-            ctx.SaveChanges();
-            return "Order successfully removed";
+            var orders = ctx.Orders.Include(o => o.OurCustomerNavigation).Where(o => o.OrderStatus == orderStatus);
+
+            return orders.ToList();
+            //return null;
         }
-
-        public string AddOrder(int customerId, int orderSum)
-        {
-
-
-            ctx.Orders.Add(new Order
-            {
-                Date = DateTime.Now,
-                OurCustomer = customerId,
-                OrderSum = orderSum
-
-
-            });
-            ctx.SaveChanges();
-            return "Order successfully created";
-        }
-
-        //public void List<SentOrder> GetAllSentOrders()
-        //{
-
-        //    return ctx.SentOrders.ToList();
-
-        //}
 
         public void RemoveItemFromList(int id)
         {
-
             var listItemToRemove = ctx.Orders.FirstOrDefault(p => p.Id == id);
             ctx.Orders.Remove(listItemToRemove);
             ctx.SaveChanges();
@@ -116,10 +83,19 @@ namespace PropellerTorkenMain.Services
             //};
 
             //SentOrderList = new List<Orders>();
-
         }
 
+        public void SetStatusToSent(int id)
+        {
+            var sentItem = ctx.Orders.FirstOrDefault(x => x.Id == id);
+            sentItem.OrderStatus = "SENT";
+            ctx.SaveChanges();
+        }
 
+        //public void List<SentOrder> GetAllSentOrders()
+        //{
+        //    return ctx.SentOrders.ToList();
 
+        //}
     }
 }

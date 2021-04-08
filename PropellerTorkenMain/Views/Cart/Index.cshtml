@@ -8,8 +8,6 @@
 
 }
 
-
-
 <div class="container">
     <div class="row">
         <div class="col" id="CartList">
@@ -19,8 +17,6 @@
                 <div class="title">
                     Shopping Bag
                 </div>
-
-                
                 <div>
                     @foreach (var item in Model.products)
                     {
@@ -52,17 +48,13 @@
                             <div class="total-price">@item.Price SEK</div>
                         </div>
                     }
-
                 </div>
             </div>
         </div>
 
-
-
         <div class="customerinfo-cart" id="CustomerInfo">
 
             <form method="post">
-
                 <div class="title">
                     Kunduppgifter
                 </div>
@@ -96,22 +88,16 @@
                     <input type="text" name="email" id="email" required placeholder="Din email..." />
                 </div><br />
 
-                      <div class="d-flex justify-content-center">
-                          @*byt type till submit när webApi är klart*@
-                          <button class="btn btn-success popup" type="button" onclick="myFunction()" name="CustomerInfoSubmit" id="CustomerConfirmButton" value="Bekräfta"><span id="confirm">Bekräfta</span><span class="popuptext" id="myPopup">Order registrerad</span></button><br />
-                          
-
-                      </div>
-
-
+                <div class="d-flex justify-content-center">
+                    @*byt type till submit när webApi är klart*@
+                    <button class="btn btn-success popup" type="button" onclick="myFunction()" name="CustomerInfoSubmit" id="CustomerConfirmButton" value="Bekräfta"><span id="confirm">Bekräfta</span><span class="popuptext" id="myPopup">Order registrerad</span></button><br />
+                </div>
             </form>
         </div>
     </div>
 </div>
 
 <script>
-    
-        
 
     var button = document.getElementById("CustomerConfirmButton");
 
@@ -209,9 +195,9 @@
             boolEmail = true;
             if (boolFirstName && boolLastName && boolStreet && boolZipCode && boolCity && boolPhoneNumber && boolEmail) {
                 button.disabled = false;
-               
+
             }
-           
+
         }
     });
     function myFunction() {
@@ -220,14 +206,8 @@
         document.getElementById("confirm").textContent = "";
         popup.classList += "show";
 
-        
     }
-
 </script>
 
-
-
-
-
-
-
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/NotifyOrder.js"></script>

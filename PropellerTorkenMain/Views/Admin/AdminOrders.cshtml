@@ -7,33 +7,24 @@
 <h1>HÄR SKA ORDRAR VISAS</h1>
 <div id="currentOrders">
     <h2>Nuvarande ordrar</h2>
-    <div  id="currentorderlist">
+    <div class="table table-striped" id="currentorderlist">
 
         @if (Model != null)
         {
+            <table>
 
-            <ul>
                 @foreach (var items in Model)
                 {
-                    <li>
-                        <span>@items.Id @items.Date</span>
-                        <span>
-                            @*<button type="submit" id="AddToSentList" value="Send" onclick="location.href='@Url.Action("Send", "Admin", new { id = items.Id, os = Model})'">Skicka </button>*@
-                            <button type="submit" id="AddToSentList" value="Send" onclick="location.href='@Url.Action("Send", "Admin", new { id = items.Id, os = Model})'">Skicka </button>
-                            <button type="submit" id="Remove" value="Delete" onclick="location.href='@Url.Action("Delete", "Admin", new { id = items.Id, os = Model})'">Ta bort</button>
+                    <tr>
 
-                        } @orders.Date
+                        <td>  @items.Id  </td>
+                        <td>  @items.Date  </td>
+                        <td> <button class="btn btn-info" type="submit" id="AddToSentList" value="Send" onclick="location.href='@Url.Action("Send", "Admin", new { id = items.Id, os = Model})'">Skicka </button>   </td>
+                        <td> <button class=" btn btn-danger" type="submit" id="Remove" value="Delete" onclick="location.href='@Url.Action("Delete", "Admin", new { id = items.Id, os = Model})'">Ta bort</button> </td>
+                    </tr>
 
-                        <div>
-                            <button class="btn btn-info" type="submit" id="AddToSentList" value="Send" onclick="location.href='@Url.Action("Send", "Admin", new { id = orders.Id, os = Model})'">Skicka </button>
-                            <button class=" btn btn-danger" type="submit" id="Remove" value="Delete" onclick="location.href='@Url.Action("Delete", "Admin", new { id = orders.Id, os = Model})'">Ta bort</button>
-                        </div>
-                    </div>
-                </li>
-                    @*@Html.ActionLink("Delete", "DeleteFromList", new { ListNumber = orders.Id })*@
                 }
-            </ul>
+            </table>
         }
     </div>
 </div>
-

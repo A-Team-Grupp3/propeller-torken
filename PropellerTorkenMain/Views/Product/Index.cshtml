@@ -11,18 +11,21 @@
     }
 </style>
 
-<div class="productkepsbox col-lg-4" id="kepsbox">
+<div class="productbox col-lg-4" id="kepsbox">
     <form method="post">
         <div class="propellerBoxPic" align="center">
-            <img src="~/images/propkeps_3.jpg" id="propellerbilden" width="200" height="200" />
+            <a href="~/Product/PropellerKepsar" />
+
+            <img src="~/images/propellerkeps-3.png" id="propellerbilden" width="200" height="200" />
             <h4>@Html.ActionLink("Propellerkepsar", "PropellerKepsar", "Product")</h4>
         </div>
     </form>
 </div>
 
-<div class="producttorkbox col-lg-4" id="torkItem">
+<div class="productbox col-lg-4" id="torkItem">
     <form method="post">
         <div class="torkBoxPic" align="center">
+            <a href="~/Product/Torktumlare" />
             <img src="~/images/svartTorktumlare.png" id="torkbilden" width="200" height="200" />
             <h4>@Html.ActionLink("Torktumlare", "TorkTumlare", "Product")</h4>
         </div>
