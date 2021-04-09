@@ -1,6 +1,5 @@
 var OrderUri = 'api/Order';
 var CustomerUri = 'api/Customer';
-var cookieData = sessionStorage.getItem('cart');
 function createOrder() {
     var firstName = document.getElementById('firstName');
     var lastName = document.getElementById('lastName');
@@ -10,15 +9,13 @@ function createOrder() {
     var phoneNumber = document.getElementById('phoneNumber');
     var zipCode = document.getElementById('zipCode');
     var custId = this.queryCustomer(firstName); // Kolla om kund
-    fetch(OrderUri, {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(cookieData)
-    }).then(function (Response) { return Response.json(); })
-        .then(function (data) { return _displayItems(data); }).catch(function (error) { return console.error("Couldn't complete.", error); });
+    var hiddenElem = document.getElementById('hiddenElem');
+    if (custId != null) {
+        hiddenElem.nodeValue = custId;
+    }
+    else {
+        hiddenElem.nodeValue = "";
+    }
 }
 function queryCustomer(customer) {
     return fetch(this.CustomerUri + "?name=" + customer).then(function (response) { return response.json(); }).then(function (data) { return data[0].customerId; });

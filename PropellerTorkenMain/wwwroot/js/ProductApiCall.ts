@@ -10,15 +10,14 @@ function createOrder() {
     const phoneNumber = document.getElementById('phoneNumber');
     const zipCode = document.getElementById('zipCode');
     const custId = this.queryCustomer(firstName); // Kolla om kund
-    fetch(OrderUri, {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body:
-    }).then(Response => Response.json())
-        .then(data => _displayItems(data)).catch(error => console.error("Couldn't complete.", error));
+    const hiddenElem = document.getElementById('hiddenElem');
+
+    if (custId != null) {
+        hiddenElem.nodeValue = custId;
+    }
+    else {
+        hiddenElem.nodeValue = "";
+    }
 }
 function queryCustomer(customer: string) {
     return fetch(this.CustomerUri + "?name=" + customer).then(response => response.json()).then(data => data[0].customerId);

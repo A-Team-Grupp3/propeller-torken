@@ -29,44 +29,44 @@ namespace PropellerTorkenMain.Controllers
             return View("PropellerKepsar");
         }
 
-        public IActionResult CreateSessionForItem1()
-        {
-            SessionHandler("PropellerKeps1");
-
-            return View("PropellerKepsar");
-        }
-
-        public IActionResult CreateSessionForItem3()
+        public IActionResult CreateSessionForItem2()
         {
             SessionHandler("PropellerKeps2");
 
             return View("PropellerKepsar");
         }
 
-        public IActionResult CreateSessionForItem4()
+        public IActionResult CreateSessionForItem3()
         {
             SessionHandler("PropellerKeps3");
 
-            return View("Torktumlare");
+            return View("PropellerKepsar");
         }
 
-        public IActionResult CreateSessionForItem5()
+        public IActionResult CreateSessionForItem4()
         {
             SessionHandler("Torktumlare1");
 
             return View("Torktumlare");
         }
 
-        public IActionResult CreateSessionForItem6()
+        public IActionResult CreateSessionForItem5()
         {
             SessionHandler("Torktumlare2");
 
             return View("Torktumlare");
         }
 
-        public IActionResult Index()
+        public IActionResult CreateSessionForItem6()
         {
             SessionHandler("Torktumlare3");
+            return View("Torktumlare");
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
 
         public IActionResult PropellerKepsar()
         {
