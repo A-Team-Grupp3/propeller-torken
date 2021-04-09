@@ -29,45 +29,44 @@ namespace PropellerTorkenMain.Controllers
             return View("PropellerKepsar");
         }
 
-        public IActionResult CreateSessionForItem2()
+        public IActionResult CreateSessionForItem1()
         {
-            SessionHandler("PropellerKeps2");
+            SessionHandler("PropellerKeps1");
 
             return View("PropellerKepsar");
         }
 
         public IActionResult CreateSessionForItem3()
         {
-            SessionHandler("PropellerKeps3");
+            SessionHandler("PropellerKeps2");
 
             return View("PropellerKepsar");
         }
 
         public IActionResult CreateSessionForItem4()
         {
-            SessionHandler("Torktumlare1");
+            SessionHandler("PropellerKeps3");
 
             return View("Torktumlare");
         }
 
         public IActionResult CreateSessionForItem5()
         {
-            SessionHandler("Torktumlare2");
+            SessionHandler("Torktumlare1");
 
             return View("Torktumlare");
         }
 
         public IActionResult CreateSessionForItem6()
         {
-            SessionHandler("Torktumlare3");
+            SessionHandler("Torktumlare2");
 
             return View("Torktumlare");
         }
 
         public IActionResult Index()
         {
-            return View();
-        }
+            SessionHandler("Torktumlare3");
 
         public IActionResult PropellerKepsar()
         {
@@ -80,7 +79,10 @@ namespace PropellerTorkenMain.Controllers
             {
                 Cart cart = new Cart();
                 var product = pc.GetProductsByName(productname).FirstOrDefault();
+
                 cart.products.Add(product);
+                cart.CartSum = cart.products.FirstOrDefault().Price;
+
                 var str = JsonConvert.SerializeObject(cart);
                 HttpContext.Session.SetString("cart", str);
             }
@@ -91,11 +93,13 @@ namespace PropellerTorkenMain.Controllers
                 if (cart.products.Any(product => product.Name == productname))
                 {
                     cart.products.Find(product => product.Name == productname).Qty++;
+                    cart.GetCartSum();
                 }
                 else
                 {
                     var product = pc.GetProductsByName(productname).FirstOrDefault();
                     cart.products.Add(product);
+                    cart.GetCartSum();
                 }
 
                 str = JsonConvert.SerializeObject(cart);

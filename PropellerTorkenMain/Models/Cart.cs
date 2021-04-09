@@ -5,12 +5,22 @@ namespace PropellerTorkenMain.Models
 {
     public class Cart
     {
+        public List<Product> products { get; set; }
+        public Customer customer { get; set; }
+        public int CartSum { get; set; }
+
         public Cart()
         {
             products = new List<Product>();
         }
 
-        public Customer customer { get; set; }
-        public List<Product> products { get; set; }
+        public void GetCartSum()
+        {
+            CartSum = 0;
+            for (int i = 0; i < products.Count; i++)
+            {
+                CartSum += products[i].Price * products[i].Qty;
+            }
+        }
     }
 }
