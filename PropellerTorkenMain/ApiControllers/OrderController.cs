@@ -17,7 +17,7 @@ namespace PropellerTorkenMain.ApiControllers
         }
 
         [HttpPost]
-        public string CreateOrder(int customerId, int orderSum)
+        public int CreateOrder(int customerId, int orderSum)
         {
             return os.AddOrder(customerId, orderSum);
         }

@@ -1,25 +1,27 @@
 ﻿using PropellerTorkenMain.Models.Database;
 using System.Collections.Generic;
+using PropellerTorkenMain.Services;
 
 namespace PropellerTorkenMain.Models
 {
     public class Cart
     {
-        public List<Product> products { get; set; }
-        public Customer customer { get; set; }
-        public int CartSum { get; set; }
-
         public Cart()
         {
-            products = new List<Product>();
+            Products = new List<Product>();
         }
+
+        public int CartSum { get; set; }
+        public DummyCustomer Customer { get; set; }
+        public int CustomerId { get; set; }
+        public List<Product> Products { get; set; }
 
         public void GetCartSum()
         {
             CartSum = 0;
-            for (int i = 0; i < products.Count; i++)
+            for (int i = 0; i < Products.Count; i++)
             {
-                CartSum += products[i].Price * products[i].Qty;
+                CartSum += Products[i].Price * Products[i].Qty;
             }
         }
     }

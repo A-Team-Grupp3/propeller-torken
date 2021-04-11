@@ -16,7 +16,7 @@ namespace PropellerTorkenMain.ApiControllers
         }
 
         [HttpPost]
-        public string AddCustomer(string firstName, string lastName, string address, string city, string email, string phoneNr, int zipcode)
+        public int AddCustomer(string firstName, string lastName, string address, string city, string email, string phoneNr, int zipcode)
         {
             return cService.AddCustomer(firstName, lastName, address, city, email, phoneNr, zipcode);
         }

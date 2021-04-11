@@ -15,13 +15,13 @@ namespace PropellerTorkenMain.Services
             //CurrentOrderList = ctx.Orders.ToList();
         }
 
-        public Order _order { get; set; }
         public List<Order> CurrentOrderList { get; set; }
+        public Order Order { get; set; }
         public List<Order> SentOrderList { get; set; }
 
-        public string AddOrder(int customerId, int orderSum)
+        public int AddOrder(int customerId, int orderSum)
         {
-            ctx.Orders.Add(new Order
+            var returnValue = ctx.Orders.Add(new Order
             {
                 Date = DateTime.Now,
                 OurCustomer = customerId,
@@ -29,7 +29,7 @@ namespace PropellerTorkenMain.Services
             });
 
             ctx.SaveChanges();
-            return "Order successfully created";
+            return returnValue.Entity.Id;
         }
 
         public string DeleteOrder(int id)

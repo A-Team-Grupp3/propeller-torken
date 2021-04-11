@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using PropellerTorkenMain.Models;
+using PropellerTorkenMain.Models.Database;
 using PropellerTorkenMain.Services;
 using System.Linq;
 
@@ -9,13 +10,11 @@ namespace PropellerTorkenMain.Controllers
 {
     public class CartController : Controller
     {
-        private CartService cs;
         private ProductService pc;
 
         public CartController()
         {
             pc = new ProductService();
-            cs = new CartService();
         }
 
         public Cart DecrementQty(string productname)
@@ -23,11 +22,11 @@ namespace PropellerTorkenMain.Controllers
             var str = HttpContext.Session.GetString("cart");
             var cart = JsonConvert.DeserializeObject<Cart>(str);
 
-            if (cart.products.Any(product => product.Name == productname))
+            if (cart.Products.Any(product => product.Name == productname))
             {
-                if (cart.products.Find(product => product.Name == productname).Qty > 0)
+                if (cart.Products.Find(product => product.Name == productname).Qty > 0)
                 {
-                    cart.products.Find(product => product.Name == productname).Qty--;
+                    cart.Products.Find(product => product.Name == productname).Qty--;
                     cart.GetCartSum();
                 }
             }
@@ -50,8 +49,8 @@ namespace PropellerTorkenMain.Controllers
             var str = HttpContext.Session.GetString("cart");
             var cart = JsonConvert.DeserializeObject<Cart>(str);
 
-            var itemToRemove = cart.products.Single(p => p.Name == productName);
-            cart.products.Remove(itemToRemove);
+            var itemToRemove = cart.Products.Single(p => p.Name == productName);
+            cart.Products.Remove(itemToRemove);
             cart.GetCartSum();
 
             str = JsonConvert.SerializeObject(cart);
@@ -69,9 +68,9 @@ namespace PropellerTorkenMain.Controllers
             }
             var str = HttpContext.Session.GetString("cart");
             var cart = JsonConvert.DeserializeObject<Cart>(str);
-            if (cart.products.Any(product => product.Name == productname))
+            if (cart.Products.Any(product => product.Name == productname))
             {
-                cart.products.Find(product => product.Name == productname).Qty++;
+                cart.Products.Find(product => product.Name == productname).Qty++;
             }
 
             return View(cart);
@@ -94,6 +93,16 @@ namespace PropellerTorkenMain.Controllers
             var cart = JsonConvert.DeserializeObject<Cart>(str);
 
             return View(cart);
+        }
+
+        public IActionResult Submit(Cart cart)
+        {
+            OrderService orderService = new();
+            CustomerService customerService = new();
+            CartService cartService = new(cart);
+            var orderNo = cartService.CreateOrder();
+            var order = orderService.GetOrderById(orderNo).Single<Order>();
+            return View("OrderComplete", order);
         }
 
         //public Cart IncrementQty(string productname)

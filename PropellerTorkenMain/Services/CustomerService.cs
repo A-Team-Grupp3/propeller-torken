@@ -1,4 +1,6 @@
-﻿using PropellerTorkenMain.Models.Database;
+﻿using PropellerTorkenMain.Models;
+using PropellerTorkenMain.Models.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,13 +10,9 @@ namespace PropellerTorkenMain.Services
     {
         private PropellerDataContext pdc = new PropellerDataContext();
 
-        public CustomerService()
+        public int AddCustomer(string firstName, string lastName, string address, string city, string email, string phoneNr, int zipcode)
         {
-        }
-
-        public string AddCustomer(string firstName, string lastName, string address, string city, string email, string phoneNr, int zipcode)
-        {
-            pdc.Customers.Add(new Customer
+            var createdCustomer = pdc.Customers.Add(new Customer
             {
                 Firstname = firstName,
                 Lastname = lastName,
@@ -25,7 +23,23 @@ namespace PropellerTorkenMain.Services
                 Zipcode = zipcode
             });
             pdc.SaveChanges();
-            return "Customer succefully added";
+            return createdCustomer.Entity.CustomerId;
+        }
+
+        public int AddCustomer(DummyCustomer dummy)
+        {
+            var createdCustomer = pdc.Customers.Add(new Customer
+            {
+                Firstname = dummy.Firstname,
+                Lastname = dummy.Lastname,
+                Address = dummy.Address,
+                City = dummy.City,
+                Email = dummy.Email,
+                PhoneNr = dummy.PhoneNr,
+                Zipcode = dummy.Zipcode
+            });
+            pdc.SaveChanges();
+            return createdCustomer.Entity.CustomerId;
         }
 
         public string DeleteCustomer(int id)
@@ -39,6 +53,12 @@ namespace PropellerTorkenMain.Services
         public IEnumerable<Customer> Get()
         {
             return pdc.Customers.ToList();
+        }
+
+        public Customer GetByInt(int custId)
+        {
+            var customer = pdc.Customers.Where(c => c.CustomerId == custId).Single<Customer>();
+            return customer;
         }
 
         public IEnumerable<Customer> GetByName(string name)

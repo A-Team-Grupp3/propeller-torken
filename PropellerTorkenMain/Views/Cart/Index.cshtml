@@ -15,65 +15,19 @@
 <div class="container">
     <div class="row">
         <div class="col" id="CartList">
-
             <div class="shopping-cart">
                 <!-- Title -->
                 <div class="title">
                     Shopping Bag
                 </div>
-                <div>
-                    @foreach (var item in Model.products)
-                    {
-        <div class="item">
-            <div class="buttons">
-                <span class="delete-btn"></span>
-            </div>
-
-            <div class="image">
-                @*<img src="~/images/circle-cropped (3).png" width="100" height="100" class="inCartImage" />*@
-                @if (item.Name.Contains("Torktumlare"))
+                @if (Model.Products.Count == 0)
                 {
-<img src="~/images/svartTorktumlare.png" width="100" height="100" class="inCartTorkImage" /> }
-
-else
-{
-<img src="~/images/circle-cropped (3).png" width="100" height="100" class="inCartImage" />}
-            </div>
-
-            <div class="description">
-                <span>@item.Name</span>
-                <span>Begagnad</span>
-                <span>Vit</span>
-            </div>
-
-            <div class="quantity">
-                @Html.ActionLink("-", "DecrementQtyForProduct", "Cart", new { productName = item.Name })
-                <img src="plus.svg" alt="" />
-
-                <span>@item.Qty</span>
-
-                @Html.ActionLink("+", "IncrementQtyForProduct", "Cart", new { productName = item.Name })
-                <img src="minus.svg" alt="" />
-            </div>
-
-            <div class="total-price">
-                @item.Price SEK
-            </div>
-
-            <div class="total-price" style="font-weight:bold">
-                @*@Html.ActionLink("Delete", "DeleteProduct", "Cart", new { productName = item.Name })*@
-
-                <div class="d-flex justify-content-centerp">
-                    <a href="@Url.Action("DeleteProduct", "Cart", new {productName = item.Name})" class="btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash align-text-top" viewBox="0 0 15 15">
-                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>}
-
+    <div class="item"><p>The cart is empty</p></div>}
+                <div>
+                    @foreach (var item in Model.Products)
+                    {
+                        await Html.RenderPartialAsync("CartProductPartial", item);
+                    }
                     <div align="right" style="padding: 20px; font-weight:bold;">
                         <p style="border:double">Total belopp: @Model.CartSum SEK</p>
                     </div>
@@ -82,63 +36,45 @@ else
         </div>
 
         <div class="customerinfo-cart" id="CustomerInfo">
-            @Html.BeginForm("CreateCustomer", "Cart"){
-            <div align="center">@Html.TextBoxFor(m => m.customer.FirstName);</div>
-            <div align="center">@Html.TextBoxFor(m => m.customer.LastName);</div>
-            <div align="center">@Html.TextBoxFor(m => m.customer.Address);</div>
-            <div align="center"> @Html.TextBoxFor(m => m.customer.ZipCode);</div>
-            <div align="center">@Html.TextBoxFor(m => m.customer.City);</div>
-            <div align="center">@Html.TextBoxFor(m => m.customer.Email);</div>
-            <div align="center">@Html.TextBoxFor(m => m.customer.PhoneNr);</div>
-            <input type="submit" class="btn btn-info" />
-            <button class="btn btn-success popup"
-                    type="button" onclick="myFunction()"
-                    name="CustomerInfoSubmit" id="CustomerConfirmButton"
-                    value="Bekräfta">
-                <span id="confirm">Bekräfta</span>
-                <span class="popuptext" id="myPopup">Order registrerad</span>
-            </button>
-            <input type="hidden" value="" id="hiddenElem" />
-
-            }
-            <!--<form method="post">
-            <div class="title">
-                Kunduppgifter
+            @{Html.BeginForm("Submit", "Cart");}
+            <div align="center">
+                <label>Återkommande kund? Skriv in ditt kundnummer här.</label><br />
+                <input name="CustomerId" />
             </div>
             <div align="center">
-                <label class="customerinfo-cart-label">Förnamn:</label><br />
-                <input type="text" name="firstName" id="firstName" required placeholder="Ditt förnamn..." />
+                @Html.LabelFor(_ => _.Customer.Firstname, htmlAttributes: new { @class = "customerinfo-cart-label" })<br />
+                @Html.TextBoxFor(m => m.Customer.Firstname)
             </div>
             <div align="center">
-                <label class="customerinfo-cart-label">Efternamn:</label><br />
-                <input type="text" name="lastName" id="lastName" required placeholder="Ditt efternamn..." />
+                @Html.LabelFor(_ => _.Customer.Lastname, htmlAttributes: new { @class = "customerinfo-cart-label" })<br />
+                @Html.TextBoxFor(m => m.Customer.Lastname)
             </div>
             <div align="center">
-                <label class="customerinfo-cart-label">Gatuadress:</label><br />
-                <input type="text" name="street" id="street" required placeholder="Din postadress..." />
+                @Html.LabelFor(_ => _.Customer.Address, htmlAttributes: new { @class = "customerinfo-cart-label" })<br />
+                @Html.TextBoxFor(m => m.Customer.Address)
             </div>
             <div align="center">
-                <label class="customerinfo-cart-label">Postnummer:</label><br />
-                <input type="text" name="zipCode" id="zipCode" required placeholder="Ditt postnummer..." />
+                @Html.LabelFor(_ => _.Customer.Zipcode, htmlAttributes: new { @class = "customerinfo-cart-label" })<br />
+                @Html.TextBoxFor(m => m.Customer.Zipcode)
             </div>
             <div align="center">
-                <label class="customerinfo-cart-label">Postort:</label><br />
-                <input type="text" name="city" id="city" required placeholder="Din postort ..." />
+                @Html.LabelFor(_ => _.Customer.City, htmlAttributes: new { @class = "customerinfo-cart-label" })<br />
+                @Html.TextBoxFor(m => m.Customer.City)
             </div>
             <div align="center">
-                <label class="customerinfo-cart-label">Telefonnummer:</label><br />
-                <input type="text" name="phoneNumber" id="phoneNumber" required placeholder="Ditt telefonnummer..." />
+                @Html.LabelFor(_ => _.Customer.Email, htmlAttributes: new { @class = "customerinfo-cart-label" })<br />
+                @Html.TextBoxFor(m => m.Customer.Email)
             </div>
             <div align="center">
-                <label class="customerinfo-cart-label">Email:</label><br />
-                <input type="text" name="email" id="email" required placeholder="Din email..." />
-            </div><br />
-
-            <div class="d-flex justify-content-center">-->
-            @*byt type till submit när webApi är klart*@
-            <!--<<br />
-                </div>
-            </form>-->
+                @Html.LabelFor(_ => _.Customer.PhoneNr, htmlAttributes: new { @class = "customerinfo-cart-label" })<br />
+                @Html.TextBoxFor(m => m.Customer.PhoneNr)
+            </div>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-success" type="submit">
+                    <span id="confirm">Bekräfta</span>
+                </button>
+            </div>
+            @{Html.EndForm(); }
         </div>
     </div>
 </div>

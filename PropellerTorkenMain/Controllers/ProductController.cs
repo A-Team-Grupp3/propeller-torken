@@ -80,8 +80,8 @@ namespace PropellerTorkenMain.Controllers
                 Cart cart = new Cart();
                 var product = pc.GetProductsByName(productname).FirstOrDefault();
 
-                cart.products.Add(product);
-                cart.CartSum = cart.products.FirstOrDefault().Price;
+                cart.Products.Add(product);
+                cart.CartSum = cart.Products.FirstOrDefault().Price;
 
                 var str = JsonConvert.SerializeObject(cart);
                 HttpContext.Session.SetString("cart", str);
@@ -90,15 +90,15 @@ namespace PropellerTorkenMain.Controllers
             {
                 var str = HttpContext.Session.GetString("cart");
                 var cart = JsonConvert.DeserializeObject<Cart>(str);
-                if (cart.products.Any(product => product.Name == productname))
+                if (cart.Products.Any(product => product.Name == productname))
                 {
-                    cart.products.Find(product => product.Name == productname).Qty++;
+                    cart.Products.Find(product => product.Name == productname).Qty++;
                     cart.GetCartSum();
                 }
                 else
                 {
                     var product = pc.GetProductsByName(productname).FirstOrDefault();
-                    cart.products.Add(product);
+                    cart.Products.Add(product);
                     cart.GetCartSum();
                 }
 
