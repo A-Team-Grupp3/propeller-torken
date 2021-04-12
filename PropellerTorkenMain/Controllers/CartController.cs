@@ -89,20 +89,29 @@ namespace PropellerTorkenMain.Controllers
             {
                 return View("IndexEmpty");
             }
-            var str = HttpContext.Session.GetString("cart");
-            var cart = JsonConvert.DeserializeObject<Cart>(str);
+            Cart cart = GetCart();
 
             return View(cart);
         }
 
         public IActionResult Submit(Cart cart)
         {
+            var cartCart = GetCart();
+            cart.CartSum = cartCart.CartSum;
+            cart.Products = cartCart.Products;
             OrderService orderService = new();
             CustomerService customerService = new();
             CartService cartService = new(cart);
             var orderNo = cartService.CreateOrder();
             var order = orderService.GetOrderById(orderNo).Single<Order>();
             return View("OrderComplete", order);
+        }
+
+        private Cart GetCart()
+        {
+            var str = HttpContext.Session.GetString("cart");
+            var cart = JsonConvert.DeserializeObject<Cart>(str);
+            return cart;
         }
 
         //public Cart IncrementQty(string productname)

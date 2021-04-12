@@ -1,5 +1,6 @@
 ﻿using PropellerTorkenMain.Models;
 using PropellerTorkenMain.Models.Database;
+using System;
 using System.Collections.Generic;
 
 namespace PropellerTorkenMain.Services
@@ -58,25 +59,26 @@ namespace PropellerTorkenMain.Services
         {
             PropellerDataContext ctx = new();
             Order order = new();
-            Customer customer;
             int CustomerId = customerService.AddCustomer(dummy);
-            customer = customerService.GetByInt(CustomerId);
-            order.OurCustomer = customer.CustomerId;
+            order.OurCustomer = CustomerId;
             order.OrderSum = CartSum;
+            order.Date = DateTime.Now;
+            ctx.Orders.Add(order);
+            ctx.SaveChanges();
+
             foreach (var prod in products)
             {
                 var newRel = new ProductsInOrder
                 {
                     ProductId = prod.Id,
-                    OrderId = order.OurCustomer
+                    OrderId = order.Id,
+                    Amount = prod.Qty
                 };
                 ctx.ProductsInOrders.Add(newRel);
-                ctx.SaveChanges();
             }
-            var returned = ctx.Orders.Add(order);
-            int orderNumber = returned.Entity.Id;
+            ctx.SaveChanges();
 
-            return orderNumber;
+            return order.Id;
         }
     }
 }
