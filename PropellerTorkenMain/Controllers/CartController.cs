@@ -4,7 +4,10 @@ using Newtonsoft.Json;
 using PropellerTorkenMain.Models;
 using PropellerTorkenMain.Models.Database;
 using PropellerTorkenMain.Services;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace PropellerTorkenMain.Controllers
 {

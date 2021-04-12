@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropellerTorkenMain", "PropellerTorkenMain\PropellerTorkenMain.csproj", "{065FEC06-D110-4BF3-9062-080F38FCB481}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropellerTorkenMain", "PropellerTorkenMain\PropellerTorkenMain.csproj", "{065FEC06-D110-4BF3-9062-080F38FCB481}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PropellerData", "PropellerData\PropellerData.sqlproj", "{3220F1BA-F8AF-437E-8F57-5486AD0D2A99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,9 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{065FEC06-D110-4BF3-9062-080F38FCB481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -30,5 +29,29 @@ Global
 		{065FEC06-D110-4BF3-9062-080F38FCB481}.Release|x64.Build.0 = Release|Any CPU
 		{065FEC06-D110-4BF3-9062-080F38FCB481}.Release|x86.ActiveCfg = Release|Any CPU
 		{065FEC06-D110-4BF3-9062-080F38FCB481}.Release|x86.Build.0 = Release|Any CPU
+		{3220F1BA-F8AF-437E-8F57-5486AD0D2A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3220F1BA-F8AF-437E-8F57-5486AD0D2A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3220F1BA-F8AF-437E-8F57-5486AD0D2A99}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3220F1BA-F8AF-437E-8F57-5486AD0D2A99}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3220F1BA-F8AF-437E-8F57-5486AD0D2A99}.Debug|x64.Build.0 = Debug|Any CPU
+		{3220F1BA-F8AF-437E-8F57-5486AD0D2A99}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{3220F1BA-F8AF-437E-8F57-5486AD0D2A99}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3220F1BA-F8AF-437E-8F57-5486AD0D2A99}.Debug|x86.Build.0 = Debug|Any CPU
+		{3220F1BA-F8AF-437E-8F57-5486AD0D2A99}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{3220F1BA-F8AF-437E-8F57-5486AD0D2A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3220F1BA-F8AF-437E-8F57-5486AD0D2A99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3220F1BA-F8AF-437E-8F57-5486AD0D2A99}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3220F1BA-F8AF-437E-8F57-5486AD0D2A99}.Release|x64.ActiveCfg = Release|Any CPU
+		{3220F1BA-F8AF-437E-8F57-5486AD0D2A99}.Release|x64.Build.0 = Release|Any CPU
+		{3220F1BA-F8AF-437E-8F57-5486AD0D2A99}.Release|x64.Deploy.0 = Release|Any CPU
+		{3220F1BA-F8AF-437E-8F57-5486AD0D2A99}.Release|x86.ActiveCfg = Release|Any CPU
+		{3220F1BA-F8AF-437E-8F57-5486AD0D2A99}.Release|x86.Build.0 = Release|Any CPU
+		{3220F1BA-F8AF-437E-8F57-5486AD0D2A99}.Release|x86.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2C53E2A-A718-441B-9BD4-15FD4F0B71EF}
 	EndGlobalSection
 EndGlobal

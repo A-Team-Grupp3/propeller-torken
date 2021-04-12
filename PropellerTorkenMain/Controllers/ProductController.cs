@@ -18,8 +18,18 @@ namespace PropellerTorkenMain.Controllers
             pc = new ProductService();
         }
 
-        public void AddItemToCart()
+          public IActionResult Index()
         {
+            return View();
+        }
+
+        public IActionResult PropellerKepsar()
+        {
+            return View();
+        }
+          public IActionResult TorkTumlare()
+        {
+            return View();
         }
 
         public IActionResult CreateSessionForItem1()
@@ -63,16 +73,6 @@ namespace PropellerTorkenMain.Controllers
             return View("Torktumlare");
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult PropellerKepsar()
-        {
-            return View();
-        }
-
         public void SessionHandler(string productname)
         {
             if (HttpContext.Session.GetString("cart") == null)
@@ -105,11 +105,6 @@ namespace PropellerTorkenMain.Controllers
                 str = JsonConvert.SerializeObject(cart);
                 HttpContext.Session.SetString("cart", str);
             }
-        }
-
-        public IActionResult TorkTumlare()
-        {
-            return View();
         }
     }
 }

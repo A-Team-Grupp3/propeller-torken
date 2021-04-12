@@ -118,9 +118,10 @@ body {
 
 .AdminHeader {
     text-align: center;
-    border: 5px solid black;
     font-size: 50px;
     font-family: Arial;
+    border: 5px hidden;
+    padding-left: 100px;
 }
 
 .ProductHeader {
@@ -286,8 +287,8 @@ body {
     height: 60px;
     border-bottom: 1px solid #E1E8EE;
     padding: 20px 30px;
-    color: #5E6977;
-    font-size: 18px;
+    color: black;
+    font-size: 14px;
     font-weight: 400;
 }
 
@@ -338,8 +339,8 @@ body {
     .description span {
         display: block;
         font-size: 14px;
-        color: #43484D;
-        font-weight: 400;
+        color: black;
+        font-weight:bold;
     }
 
         .description span:first-child {
@@ -349,7 +350,7 @@ body {
         .description span:last-child {
             font-weight: 300;
             margin-top: 8px;
-            color: #86939E;
+            color: black;
         }
 
 .quantity {
@@ -362,8 +363,8 @@ body {
         border: none;
         text-align: center;
         width: 32px;
-        font-size: 16px;
-        color: #43484D;
+        font-size: 14px;
+        color: black;
         font-weight: 300;
     }
 
@@ -381,7 +382,7 @@ body {
 }
 
 .plus-btn img {
-    margin-top: 2px;
+    margin-top: 3px;
 }
 
 button:focus,
@@ -391,18 +392,18 @@ input:focus {
 
 .total-price {
     width: 83px;
-    padding-top: 27px;
+    padding-top: 20px;
     text-align: center;
-    font-size: 16px;
-    color: #43484D;
-    font-weight: 300;
+    font-size: 14px;
+    color: black;
+    font-weight:bold;
 }
 
 .cart-total-price {
     width: 83px;
-    padding-top: 27px;
-    font-size: 16px;
-    color: #43484D;
+    padding-top: 20px;
+    font-size: 14px;
+    color: black;
     font-weight: 300;
 }
 
@@ -426,9 +427,9 @@ input:focus {
     .image,
     .quantity,
     .description {
-        width: 100%;
+        width: auto;
         text-align: center;
-        margin: 6px 0;
+        margin: 6px;
     }
 
     .buttons {
@@ -595,7 +596,8 @@ input:focus {
     cursor: pointer;
     opacity: 0.9;
     font-weight: bold;
-    width: auto;
+    width: 410px;
+    height: 150px;
 }
 
 #logopic {
@@ -699,5 +701,58 @@ input:focus {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    padding-top: 30px;
+      padding-top: 30px;
 }
+
+.torkPic {
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+
+

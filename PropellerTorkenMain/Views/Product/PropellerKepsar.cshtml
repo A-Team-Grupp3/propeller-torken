@@ -5,60 +5,63 @@
     ViewData["Title"] = "Propellerkepsen från Åkarp";
     Layout = "~/Views/Shared/_Productlayout.cshtml";
 }
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-    img:hover {
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-    }
-</style>
 
-<section class="container">
-    <div class="row">
-        <article class="col-sm-4">
-            <div class="productbox" id="kepsbox">
-                <form method="post">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <style>
+        img:hover {
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+        }
+    </style>
 
-                    <div class="propellerFirstPic" align="center">
-                        <img class="img-thumbnail img-fluid" id="propellerbilden" src="~/images/propkeps_3.jpg" height="200" width="200" />
-                    </div>
+    <section class="container">
+        <div class="row">
+            <article class="col-sm-4">
+                <div class="productbox" id="kepsbox">
+                    <form method="post">
+                        <div class="propellerFirstPic" align="center">
+                            <img class="img-thumbnail img-fluid" id="propellerbilden" src="~/images/propkeps_3.jpg" height="200" width="200" />
+                        </div>
+                        <h5 style="text-align:center">Vår ena propellerkeps</h5>
+                        <p class="text-wrap" style="text-align:center">Den är fantastisk!</p>
+                        <div class="d-flex justify-content-center ">
+                            <button class="btn-info btn-lg" asp-action="CreateSessionForItem1" style="font-size:18px" id="redbutton">Add to cart <i class="fa fa-shopping-cart"></i></button>
 
-                    <h5 style="text-align:center">Vår ena propellerkeps</h5>
-                    <p class="text-wrap" style="text-align:center">Den är fantastisk!</p>
-                    <div class="d-flex justify-content-center ">
-                        <button class="btn-info btn-lg" asp-action="CreateSessionForItem1" style="font-size:18px" id="redbutton">Add to cart <i class="fa fa-shopping-cart"></i></button>
-                    </div>
-                </form>
-            </div>
-        </article>
+                        </div>
+                    </form>
+                </div>
+            </article>
 
-        <article class="col-sm-4">
-            <div class="productbox" id="kepsbox">
-                <form method="post">
-                    <div class="propellerSecPic" align="center">
-                        <img class="img-thumbnail img-fluid" id="propellerbilden" src="~/images/Modellfoto_Calle.jpg" height="200" width="200" />
-                    </div>
-                    <h5 style="text-align:center">Här är den andra</h5>
-                    <p class="text-wrap" style="text-align:center">Visst är den fin?</p>
-                    <div class="d-flex justify-content-center ">
-                        <button class="btn-info btn-lg" asp-action="CreateSessionForItem2" style="font-size:18px" id="redbutton">Add to cart <i class="fa fa-shopping-cart"></i></button>
-                    </div>
-                </form>
-            </div>
-        </article>
-        <article class="col-sm-4">
-            <div class="productbox" id="kepsbox">
-                <form method="post">
-                    <div class="propellerThirdPic" align="center">
-                        <img class="img-thumbnail img-fluid" id="propellerbilden" src="~/images/Modellfoto_Elin.jpg" height="200" width="200" />
-                    </div>
-                    <h5 style="text-align:center">Och den första igen</h5>
-                    <p class="text-wrap" style="text-align:center">Jag sover med min varje natt.</p>
-                    <div class="d-flex justify-content-center ">
-                        <button class="btn-info btn-lg" asp-action="CreateSessionForItem3" style="font-size:18px" id="redbutton">Add to cart <i class="fa fa-shopping-cart"></i></button>
-                    </div>
-                </form>
-            </div>
-        </article>
-    </div>
-</section>
+            <article class="col-sm-4">
+                <div class="productbox" id="kepsbox">
+                    <form method="post">
+                        <div class="propellerSecPic" align="center">
+                            <img class="img-thumbnail img-fluid" id="propellerbilden" src="~/images/Modellfoto_Calle.jpg" height="200" width="200" />
+                        </div>
+                        <h5 style="text-align:center">Här är den andra</h5>
+                        <p class="text-wrap" style="text-align:center">Visst är den fin?</p>
+                        <div class="d-flex justify-content-center ">
+                            <button class="btn-info btn-lg" asp-action="CreateSessionForItem2" style="font-size:18px" id="redbutton">Add to cart <i class="fa fa-shopping-cart"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </article>
+            <article class="col-sm-4">
+                <div class="productbox" id="kepsbox">
+                    <form method="post">
+                        <div class="propellerThirdPic" align="center">
+                            <img class="img-thumbnail img-fluid" id="propellerbilden" src="~/images/Modellfoto_Elin.jpg" height="200" width="200" />
+                        </div>
+                        <h5 style="text-align:center">Och den första igen</h5>
+                        <p class="text-wrap" style="text-align:center">Jag sover med min varje natt.</p>
+                        <div class="d-flex justify-content-center ">
+                            <button class="btn-info btn-lg" asp-action="CreateSessionForItem3" style="font-size:18px" id="redbutton">Add to cart <i class="fa fa-shopping-cart"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </article>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </section>

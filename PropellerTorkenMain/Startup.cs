@@ -66,13 +66,13 @@ namespace PropellerTorkenMain
             services.AddSingleton<OrderService>();
             services.AddDbContext<ApplicationDbContext>(options =>
                options.UseSqlServer(
-                   Configuration.GetConnectionString("DefaultConnection")));
+                   Configuration.GetConnectionString("UserConnection")));
             services.AddDbContext<PropellerDataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DataConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDbContext<PropellerDataContext>(options =>
                 options.UseSqlServer(
-                                       Configuration.GetConnectionString("DefaultConnection")));
+                                       Configuration.GetConnectionString("UserConnection")));
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()
